@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>for Zianne, with love</title>
+
+<!-- 
+  FONT NOTE:
+  - "Caveat"     -> the handwritten headline font
+  - "Literata"   -> the elegant, readable serif used for the letter body
+  - "Press Start 2P" -> the tiny pixel font, used ONLY for the little tag above the title
+  This mix is what gives the page its "handwritten note + pixel sticker" feel.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Literata:ital,opsz,wght@0,16..30,400;0,16..30,500;0,16..30,600;1,16..30,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       BACKGROUND LAYER
+       Tiny dots, stars and paw prints drawn with plain CSS shapes.
+       Purely decorative, sits behind everything (z-index: 0).
+  ============================================================= -->
+  <div class="bg-deco" aria-hidden="true">
+    <span class="dot" style="top:8%; left:12%;"></span>
+    <span class="dot" style="top:22%; left:82%;"></span>
+    <span class="dot" style="top:38%; left:6%;"></span>
+    <span class="dot" style="top:60%; left:92%;"></span>
+    <span class="dot" style="top:78%; left:16%;"></span>
+    <span class="dot" style="top:88%; left:70%;"></span>
+
+    <span class="mini-star" style="top:14%; left:46%;">✦</span>
+    <span class="mini-star" style="top:66%; left:8%;">✧</span>
+    <span class="mini-star" style="top:84%; left:52%;">✦</span>
+
+    <span class="paw-trail" style="top:30%; left:90%;">🐾</span>
+    <span class="paw-trail" style="top:72%; left:4%;">🐾</span>
+  </div>
+
+  <!-- ============================================================
+       PAGE WRAPPER
+       Everything visible (stickers + letter) lives in here so we
+       can center it as one composition.
+  ============================================================= -->
+  <main class="page">
+
+    <!-- ---------- Header: pixel tag + handwritten title ---------- -->
+    <header class="letter-header fade-in" style="--delay: 0s;">
+      <p class="pixel-tag">✦ a little letter ✦</p>
+      <h1 class="title">for Zianne</h1>
+      <p class="subtitle">happy birthday, dear friend</p>
+    </header>
+
+    <!-- ---------- The composition: stickers + the letter itself ---------- -->
+    <div class="composition">
+
+      <!-- Decorative stickers (uploaded assets), positioned around the letter.
+           Edit the "top / left / right / bottom" values in style.css under
+           each .sticker--name rule if you want to move any of them. -->
+      <img src="assets/uploaded-images/cat-sleepy.jpg" alt=""
+           class="sticker sticker--sleepy fade-in" style="--delay: .15s;" />
+
+      <img src="assets/uploaded-images/hearts-blue.jpg" alt=""
+           class="sticker sticker--hearts fade-in" style="--delay: .25s;" />
+
+      <img src="assets/uploaded-images/ice-cream-hearts.jpg" alt=""
+           class="sticker sticker--icecream fade-in" style="--delay: .35s;" />
+
+      <img src="assets/uploaded-images/envelope-heart.jpg" alt=""
+           class="sticker sticker--envelope fade-in" style="--delay: .45s;" />
+
+      <img src="assets/uploaded-images/cat-paws.jpg" alt=""
+           class="sticker sticker--paws fade-in" style="--delay: .55s;" />
+
+      <img src="assets/uploaded-images/cat-surprised.jpg" alt=""
+           class="sticker sticker--surprised fade-in" style="--delay: .65s;" />
+
+      <!-- ---------- The actual letter (the star of the page) ---------- -->
+      <section class="letter fade-in" style="--delay: .2s;" aria-label="Birthday letter to Zianne">
+
+        <!-- little wax-seal-style heart at the top of the page -->
+        <div class="seal" aria-hidden="true">♡</div>
+
+        <p class="salutation">Dear Zianne,</p>
+
+        <!--
+          EDIT ME: This is placeholder letter text written to be warm
+          and easy to personalize. Swap in your own memories, inside
+          jokes, and specifics about Zianne — the more specific, the
+          more it'll feel like "you." Keep paragraphs short so it
+          stays easy to read on the stationery card.
+        -->
+        <p>
+          Another year has found you, and somehow you're even more
+          you than before — which is exactly how it should be. I
+          hope today feels light and unhurried, full of the small
+          things that make you smile.
+        </p>
+
+        <p>
+          I don't say it often enough, so let today be the excuse:
+          I'm really glad you're in my life. You have this way of
+          making ordinary days feel a little softer, a little
+          funnier, a little more worth remembering.
+        </p>
+
+        <p>
+          So here's to you, Zianne — to another year of your bad
+          jokes, your good heart, and every quiet, ordinary Tuesday
+          that somehow feels better with you around. I hope this
+          year gives you everything you've been quietly hoping for.
+        </p>
+
+        <p class="closing">With love,</p>
+        <!-- EDIT ME: swap in your name -->
+        <p class="signature">your friend</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
