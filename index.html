@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for Zianne, with love</title>
+
+    <!-- 
+  FONT NOTE:
+  - "Caveat"     -> the handwritten headline font
+  - "Literata"   -> the elegant, readable serif used for the letter body
+  - "Press Start 2P" -> the tiny pixel font, used ONLY for the little tag above the title
+  This mix is what gives the page its "handwritten note + pixel sticker" feel.
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Literata:ital,opsz,wght@0,16..30,400;0,16..30,500;0,16..30,600;1,16..30,400&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+       BACKGROUND MUSIC
+       Starts only after Zianne clicks the "open" button below
+       (browsers block audio from autoplaying before a click).
+       Swap the file in assets/audio/ to change the song.
+  ============================================================= -->
+    <audio id="bgm" src="assets/audio/song.mp3" loop preload="none"></audio>
+
+    <!-- Small music on/off control, only visible once the letter is open -->
+    <button
+      id="musicToggle"
+      class="music-toggle hidden"
+      type="button"
+      aria-label="Toggle music"
+    >
+      🔈
+    </button>
+
+    <!-- ============================================================
+       INTRO / COVER SCREEN
+       This is the first thing Zianne sees: a little envelope and
+       an "open" button. Clicking it reveals the letter scene below
+       and starts the music. Edit the wording here freely.
+  ============================================================= -->
+    <section id="intro" class="intro">
+      <div class="intro-inner fade-in">
+        <img
+          src="assets/uploaded-images/envelope-heart.jpg"
+          alt=""
+          class="intro-envelope"
+        />
+        <p class="pixel-tag">✦ a little letter ✦</p>
+        <h1 class="intro-title">for Zianne</h1>
+        <p class="intro-sub">tap the envelope to open your letter</p>
+        <button id="openBtn" class="open-btn" type="button">Open ♡</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       BACKGROUND LAYER
+       Tiny dots, stars and paw prints drawn with plain CSS shapes.
+       Purely decorative, sits behind everything (z-index: 0).
+  ============================================================= -->
+    <div class="bg-deco" aria-hidden="true">
+      <span class="dot dot-1"></span>
+      <span class="dot dot-2"></span>
+      <span class="dot dot-3"></span>
+      <span class="dot dot-4"></span>
+      <span class="dot dot-5"></span>
+      <span class="dot dot-6"></span>
+
+      <span class="mini-star star-1">✦</span>
+      <span class="mini-star star-2">✧</span>
+      <span class="mini-star star-3">✦</span>
+
+      <span class="paw-trail paw-1">🐾</span>
+      <span class="paw-trail paw-2">🐾</span>
+    </div>
+
+    <!-- ============================================================
+       LETTER SCENE
+       Hidden until the intro's "Open" button is clicked (see
+       script.js). Everything visible (stickers + letter) lives in
+       here so we can center it as one composition.
+  ============================================================= -->
+    <main id="letterScene" class="page hidden">
+      <!-- ---------- Header: pixel tag + handwritten title ---------- -->
+      <header class="letter-header fade-in">
+        <p class="pixel-tag">✦ a little letter ✦</p>
+        <h1 class="title">for Zianne</h1>
+        <p class="subtitle">happy 18th birthday</p>
+      </header>
+
+      <!-- ---------- The composition: stickers + the letter itself ---------- -->
+      <div class="composition">
+        <!-- Decorative stickers (uploaded assets), positioned around the letter.
+           Edit the "top / left / right / bottom" values in style.css under
+           each .sticker--name rule if you want to move any of them. -->
+        <img
+          src="assets/uploaded-images/cat-sleepy.jpg"
+          alt=""
+          class="sticker sticker--sleepy fade-in"
+        />
+
+        <img
+          src="assets/uploaded-images/hearts-blue.jpg"
+          alt=""
+          class="sticker sticker--hearts fade-in"
+        />
+
+        <img
+          src="assets/uploaded-images/ice-cream-hearts.jpg"
+          alt=""
+          class="sticker sticker--icecream fade-in"
+        />
+
+        <img
+          src="assets/uploaded-images/envelope-heart.jpg"
+          alt=""
+          class="sticker sticker--envelope fade-in"
+        />
+
+        <img
+          src="assets/uploaded-images/cat-paws.jpg"
+          alt=""
+          class="sticker sticker--paws fade-in"
+        />
+
+        <img
+          src="assets/uploaded-images/cat-surprised.jpg"
+          alt=""
+          class="sticker sticker--surprised fade-in"
+        />
+
+        <!-- ---------- The actual letter (the star of the page) ---------- -->
+        <section class="letter fade-in" aria-label="Birthday letter to Zianne">
+          <!-- little wax-seal-style heart at the top of the page -->
+          <div class="seal" aria-hidden="true">♡</div>
+
+          <p class="salutation">Happy Birthdaaaay, Zianne.</p>
+
+          <p>
+            My plot twist and my always — I really waited for your birthday na
+            mag-12, because why not diba? Pero first things first, thank you for
+            being my gift, even though it’s your day. You’re my gift, why?
+            Because in a way, you make me happier, and just your presence alone
+            makes my life lighter. I hope I do have the same effect on you.
+          </p>
+
+          <p>
+            A year ago, we were in different paths. You were probably crying or
+            upset about something, or happy — I remember na saimo ge chika dati
+            kay your setup was a bit messy dati, and also mine. Who would have
+            thought noh, nga ge-follow ra taka dati sa IG, saw nag-myday ka sa
+            imo birthday, and giving no damn whatsoever. I mean, out of my
+            league man gud ka, so dedma ra guds. Tas karon, here I am, writing a
+            letter for you, waking up each day excited to talk to you and to
+            await the time I feel your warmth.
+          </p>
+
+          <p>
+            Thank you also for being there for me, even though your life has
+            many challenges. You never failed to reassure me, even on the times
+            I’ve been needy. Thank you for being my solace, my unpaid sugar
+            mommy, and a good and caring girlfriend of mine. Even though we have
+            our differences, we still choose each other, over and over again.
+          </p>
+
+          <p>
+            Just know na I’m proud of you, and everything that you do and
+            accomplish in your life. No matter where life brings us, I’m always
+            proud of how strong and capable you are, in every way. And know that
+            if naay mag-away saimo, I’m always here to cyberbully them, or just
+            away them for you. I’ll do everything for you in a heartbeat.
+          </p>
+
+          <p>
+            Again, thank you for being here, and I’m proud of you for achieving
+            another year — especially 18 years old. Younger you wouldn’t have
+            imagined being here guro, and I’m so proud of you, because even
+            though life throws you shit, you still prevail despite of it.
+          </p>
+
+          <p>
+            I think that’s also what makes turning 18 so special. You’re growing
+            up, and there will be so many things that will change from here on
+            out. Sometimes it might feel like everything is running out — time,
+            moments, childhood, or even the versions of ourselves that we used
+            to know. But I hope you never feel like you have to rush growing up.
+            You don’t have to have everything figured out just because you’re
+            18. There’s still so much life waiting for you, so many memories you
+            haven’t made, and so many versions of yourself that you’ll still
+            meet along the way.
+          </p>
+
+          <p>
+            And if one day you look back at this version of yourself, I hope
+            you’ll be proud of her too. I hope you remember how far you’ve come,
+            the things you survived, the people who loved you, and all the
+            little moments that made you who you are today. Growing up might
+            mean leaving some things behind, but it doesn’t mean you have to
+            lose the things that make you you.
+          </p>
+
+          <p>
+            Reminder na, you don’t need to be strong around me ha — you can
+            always lean on me. The road after this might not be easy, but I’ll
+            always be here for you, forever and always. Also, God is always with
+            us, and I know na we will always be together.
+          </p>
+
+          <p>
+            I love you so much, even if it gets repetitive. I’ll never stop
+            saying it, or making you feel it. I’m sorry if I can’t give you
+            things like you did on my birthday, but I promise you na mu-bawi ako
+            pagkita nato, hehehehehe.
+          </p>
+
+          <p class="signature">
+            I loooveee youuu soooo muuuch, and please do enjoy your day. I
+            loveee youuuuu verrry much.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
